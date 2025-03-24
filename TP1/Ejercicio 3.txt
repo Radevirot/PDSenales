@@ -1,0 +1,21 @@
+Contando la cantidad de muestras que tenemos en la gráfica podemos calcular la frecuencia de muestreo. En 0.1 segundos hay 80 muestras, dividiendo 80/0.1 obtenemos la cantidad de muestras por segundo, que es 800.
+fm = 800 Hz
+Tm = 1/fm = 0.00125 s
+
+(también era posible contar cuántas muestras hay en 0.1 s y multiplicar ese valor por 10)
+
+Sabiendo cuánto tiempo hay entre cada muestra podemos determinar con certeza cuando comienza y termina un ciclo de la senoidal.
+ti = 0.01 - 0.00125 * 3 = 0.00625 s
+tf = 0.06 - 0.00125 * 3 = 0.05625 s
+tf-ti = 0.05 s = Ts
+El período de la senoidal es entonces 0.05 s.
+fs = 1/Ts = 20 Hz
+
+La amplitud se puede observar sencillamente.
+A = 3
+
+Ahora, el valor del ángulo de fase se puede calcular como
+Φ = -2*pi*fs*t1
+donde t1 es el retardo temporal de la primera intersección con el eje X.
+t1 = 0.00125 * 5 = 0.00625 s
+Φ = -0.7854 rad = - pi/4 rad = -45 grados 

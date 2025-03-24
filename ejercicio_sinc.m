@@ -1,4 +1,4 @@
-function [xt, t] = sinc(fm, fs)
+function [xt, t] = ejercicio_sinc(fm, fs)
 
   T = 1/fm;
   t = -1:T:1-T;  %tfin-T para que no muestre el último número
