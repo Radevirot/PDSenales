@@ -1,12 +1,26 @@
-[xt, t] = senoidal(1, 0, 1, 10, 1, 0);
+[xt, t] = senoidal(1, -3, 3, 10, 1, 0);
 
-[xm, tm] = interpolador_sinc(t, xt, 10, 40);
-% !!! Preguntar cómo usar mi propia función sinc para el interpolador
+[xm_sinc, tm_sinc] = interpolador_sinc(t, xt, 10, 40, 'sinc');
 
-subplot(2,1,1);
+[xm_lineal, tm_lineal] = interpolador_sinc(t, xt, 10, 40, 'lineal');
+
+[xm_escalon, tm_escalon] = interpolador_sinc(t, xt, 10, 40, 'escalon');
+
+subplot(4,1,1);
 stem(t,xt)
-subplot(2,1,2);
-stem(tm,xm);
+title('Original')
+
+subplot(4,1,2);
+stem(tm_sinc,xm_sinc);
+title('Interpolada Sinc')
+
+subplot(4,1,3);
+stem(tm_lineal,xm_lineal);
+title('Interpolada Lineal')
+
+subplot(4,1,4);
+stem(tm_escalon,xm_escalon);
+title('Interpolada Escalon')
 
 
 
