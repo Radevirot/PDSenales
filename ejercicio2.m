@@ -15,11 +15,12 @@ figure(3);
 stem(t,xtabs);
 title('Rectificacion de onda completa')
 
-xtforcuant = xt-min(xt) %le sumo el absoluto del mínimo pq sino se lo resta xd
+xtforcuant = xt-min(xt) %le sumo el absoluto del mínimo pq sino se lo resta
                     %(esto para levantar la función por arriba del 0 y que la cuantización no la desaparezca)
 N = 8;
 rangofuncion = abs(min(xt))+abs(max(xt));
-H = rangofuncion/N;
+H = rangofuncion/(N-1); % El H alto de cada intervalo en y para tener N niveles.
+                        % Dividimos por N-1 para tener N niveles.
 cuantizedxt = cuantizacion(xtforcuant,H,N);
 cuantizedxt = cuantizedxt+min(xt);
 figure(4);
