@@ -1,9 +1,9 @@
 function [xm, tm] = interpolador_sinc(tn, y, vieja_fm, nueva_fm, funcion)
 
   T = 1/vieja_fm; Ti = 1/nueva_fm;
-  n = linspace(1,length(tn),length(tn));
+  n = 0:length(tn)-1;
 
-  tm = tn(1):Ti:tn(length(tn))+T-Ti %creo el nuevo vector de tiempos con los mismos
+  tm = tn(1):Ti:tn(end)+T; %creo el nuevo vector de tiempos con los mismos
                             %extremos pero usando la frecuencia nueva
 
   xm = zeros(length(tm),1); %genero el vector de salidas con ceros para poder recorrerlo
@@ -12,9 +12,7 @@ function [xm, tm] = interpolador_sinc(tn, y, vieja_fm, nueva_fm, funcion)
 
   switch (funcion)
     case 'escalon'
-
       xm(m) = sum(y .* escalon( (Ti*m)/T - n ));
-
     case 'lineal'
       xm(m) = sum(y .* triangulo( (Ti*m - T*n)./T) );
     case 'sinc'
@@ -23,14 +21,7 @@ function [xm, tm] = interpolador_sinc(tn, y, vieja_fm, nueva_fm, funcion)
       error('escalon, lineal o sinc son los posibles interpoladores.')
   endswitch
 
-    % Acá opero con vectores: le resto a cada tiempo del vector nuevo todos los
-    % tiempos del vector viejo, eso me deja un vector nuevo al que divido por T,
-    % después le aplico la función sinc a cada uno de sus elementos, multiplico
-    % elemento a elemento por los valores de la señal original y finalmente los
-    % sumo. Da lo mismo que hacer la sumatoria usando un for de n=1:length(tn).
-
   endfor
-
 
  % Nota extra:
  % Acá se me presentó un problema a la hora de usar la función interpolante del
