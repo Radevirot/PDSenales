@@ -1,4 +1,7 @@
-[xt, t] = senoidal(1, -3, 3, 10, 1, 0);
+clear all; clc;
+
+%[xt, t] = senoidal(1, -3, 3, 10, 1, 0);
+[xt, t] = mi_sinc(10, 0.5);
 
 [xm_sinc, tm_sinc] = interpolador_sinc(t, xt, 10, 40, 'sinc');
 
