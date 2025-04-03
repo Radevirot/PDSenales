@@ -8,4 +8,6 @@ hold on
 % Al ampliar la fm a 16000 o más podemos apreciar que efectivamente es una
 % senoidal de fs = 4000 Hz. Debido a la conclusión que yo mismo saqué de
 % el ejercicio anterior, la frecuencia de muestreo no es suficiente para poder
-% representar todos los ciclos de la senoidal.
+% representar todos los ciclos de la senoidal. El efecto se llama "aliasing".
+
+

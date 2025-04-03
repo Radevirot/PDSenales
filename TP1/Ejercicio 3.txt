@@ -2,7 +2,7 @@ Contando la cantidad de muestras que tenemos en la gráfica podemos calcular la 
 fm = 800 Hz
 Tm = 1/fm = 0.00125 s
 
-(también era posible contar cuántas muestras hay en 0.1 s y multiplicar ese valor por 10)
+(también era posible contar cuántas muestras hay en 0.01 s y multiplicar ese valor por 10)
 
 Sabiendo cuánto tiempo hay entre cada muestra podemos determinar con certeza cuando comienza y termina un ciclo de la senoidal.
 ti = 0.01 - 0.00125 * 3 = 0.00625 s
