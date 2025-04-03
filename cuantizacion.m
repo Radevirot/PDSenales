@@ -7,7 +7,7 @@ for i=1:length(xt)
     xt(i) = 0;
    else
     if (0 <= xt(i) && xt(i) < (N-1)*H)
-    xt(i) = H*ceil(xt(i)/H);
+    xt(i) = H*round(xt(i)/H);
    else
     if (xt(i) >= (N-1)*H)
     xt(i) = (N-1)*H;
