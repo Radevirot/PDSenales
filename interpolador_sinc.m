@@ -16,7 +16,7 @@ function [xm, tm] = interpolador_sinc(tn, y, vieja_fm, nueva_fm, funcion)
     case 'lineal'
       xm(m) = sum(y .* triangulo( (Ti*m - T*n)./T) );
     case 'sinc'
-      xm(m) = sum(y .* mi_sinc_t( (Ti*m - T*n)./T , 0.5));
+      xm(m) = sum(y .* mi_sinc_t( ((Ti*m)/T - n) , 0.5));
     otherwise
       error('escalon, lineal o sinc son los posibles interpoladores.')
   endswitch

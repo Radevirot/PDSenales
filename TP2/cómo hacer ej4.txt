@@ -1,0 +1,2 @@
+para calcular la reacción al impulso de los sistemas, se debe usar como entrada x[n] el delta de dirac discreto, una función que en 0 vale 1 y para todos los demás valores es 0 (se debe considerar además que todas las condiciones iniciales son nulas, o sea si hay índices negativos la función de impulso también vale cero).
+La y[n] resultante será la respuesta al impulso.
