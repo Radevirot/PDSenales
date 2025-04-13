@@ -1,22 +1,26 @@
 function y = convolucion_lineal(x,h)
 
-  N = length(x)+length(h)-1;
+  % calcula la conv lineal entre x y h.
+
+  N = length(x)+length(h)-1; % tamaño de la señal de salida
 
   for k=1:N
 
-    suma=0;
+    suma=0; %inicializo acumulador
 
     for i=1:N
 
-      h_resta = 0;
-      valor_x = 0;
+      h_resta = 0; %inicializo valor de h
+      valor_x = 0; % inicializo valor de x
 
-      if (k-i+1 > 0 && k-i+1 <= length(x))
-        h_resta = h(k-i+1);
+      if (k-i+1 > 0 && k-i+1 <= length(h))
+        h_resta = h(k-i+1); %h se recorre al revés (desplazado k unidades) por el espejamiento en la convolución
+                            %reviso que los índices no se salgan de los válidos
+                            %el +1 es por el manejo de índices de octave
       endif
 
       if (i <= length(x))
-        valor_x = x(i);
+        valor_x = x(i); %x se recorre normalmente, reviso que i no se pase del tamaño de x
       endif
 
       suma += valor_x*h_resta;
