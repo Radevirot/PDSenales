@@ -1,5 +1,5 @@
 clear all; clc;
-N = 10;
+N = 40;
 a = 0.4;
 k = 1:N;
 
