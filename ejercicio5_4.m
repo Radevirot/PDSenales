@@ -21,7 +21,7 @@
 
 fm = 50; fs = 105;
 
-[xt, t] = senoidal(3, 0, 1, fm, fs, 0);
+[xt, t] = senoidal(3, 0, 2, fm, fs, 0);
 
 X = fft(xt);
 [X, f] = centrar_frecuencias(X,50,length(t));
@@ -31,7 +31,7 @@ k=round(fs/fm);
 frecuencia_aliasing = abs(fs-((k*fm)))
 
 % la relación entre la magnitud del espectro y la amplitud de la señal
-% es |X| = A*(fm/2)
+% es |X| = A*(N/2)
 
 
 
