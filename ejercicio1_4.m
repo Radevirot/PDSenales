@@ -105,6 +105,9 @@ stem(f_c3,abs(Sk_c3)/N);
 title('sin(2 pi 10 t) + 4sin(2 pi 10.5 t)');
 xlabel('Frecuencias (Hz)')
 ylabel('Magnitud')
+%acá aparece un efecto conocido como "fuga espectral" o spectral leakage, ya que
+%la frecuencia de muestreo está "entre medio" de dos frecuencias del eje de la
+%transformada, este efecto
 subplot(2,2,4)
 stem(f_c4,abs(Sk_c4)/length(t2));
 title('t=[0...2) · sin(2 pi 10 t) + 4sin(2 pi 20 t)');
