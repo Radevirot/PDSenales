@@ -11,18 +11,21 @@ n = 512;
 y = 1;
 x = [1 -1/2 1-4];
 freqz(y,x,n,fm);
+title('Sistema 1');
 
 #Punto 2;
 figure;
 y = [0 1];
 x = [1 -1 -1];
 freqz(y,x,n,fm);
+title('Sistema 2');
 
 #Punto 3;
 figure;
 y = [7];
 x = [1 -2 6];
 freqz(y,x,n,fm);
+title('Sistema 3');
 
 #Punto 4;
 figure;
@@ -32,3 +35,4 @@ for i=(0:7)
 endfor
 x = 1;
 freqz(y,x,n,fm);
+title('Sistema 4');

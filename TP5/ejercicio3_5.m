@@ -8,6 +8,7 @@ pkg load signal;
 h_num = [1 -2 2 -1];
 h_denom = [1 -1.7 0.8 -0.1];
 zplane(h_num,h_denom)
+title('Plano Z')
 #Tiene 2 polos dentro del circulo, y uno en el borde, que es anulado por un cero
 #el sistema es ESTABLE
 disp('Raices del Numerador');
@@ -29,3 +30,4 @@ figure;
 stem(x,h)
 grid on
 hold on
+title('Respuesta al impulso')

@@ -53,9 +53,10 @@ grid on;
 #VENTANA de blackman :
 hf=h(1:N).*blackman(N).';
 figure;
-stem(hf)
-title('Respuesta en frecuencia y fase');
+stem(hf);
+title('Respuesta en frecuencia y fase ()');
 freqz(hf,1,1000,fm);
+title('Blackman')
 
 #VENTANA CUADRADA :
 hf=h(1:N).*boxcar(N).';
@@ -63,3 +64,4 @@ figure;
 stem(hf)
 title('Respuesta en frecuencia y fase');
 freqz(hf,1,1000,fm);
+title('Cuadrada')
