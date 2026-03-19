@@ -55,6 +55,7 @@ hf=h(1:N).*blackman(N).';
 figure;
 stem(hf);
 title('Respuesta en frecuencia y fase ()');
+figure;
 freqz(hf,1,1000,fm);
 title('Blackman')
 
@@ -63,5 +64,6 @@ hf=h(1:N).*boxcar(N).';
 figure;
 stem(hf)
 title('Respuesta en frecuencia y fase');
+figure;
 freqz(hf,1,1000,fm);
 title('Cuadrada')

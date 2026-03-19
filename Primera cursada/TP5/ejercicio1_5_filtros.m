@@ -26,7 +26,7 @@ fr=50;
 #Regla practica : M =  10*N
 
 #Datos del muestreo
-N = 11;
+N = 100;
 M = 10*N;
 
 
