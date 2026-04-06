@@ -1,9 +1,9 @@
 % ---- PARTE I ----
 [t, x] = senoidal(0, 2, 400, 10, pi/4, 5);
 % morfológica: señal digital (tiempo y amplitud discretos)
-% fenomenológica: señal determinística, periódica, sinusoidal
+% fenomenológica: señal determinística -> periódica -> sinusoidal
 
-N = 16;
+N = 4;
 
 x_rectificada = abs(x);
 x_cuantizada = cuantizacion(x_rectificada,N);

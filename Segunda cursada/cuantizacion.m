@@ -4,7 +4,7 @@ function x_out = cuantizacion(x, N)
                      #pq sino la cuantización no la incluye
   rango = abs(min(x))+abs(max(x)); #obtengo el rango completo de la función
                                    #para calcular la magnitud del paso H
-  H = rango/N;
+  H = rango/(N-1);
 
   for i=1:length(x)
 
@@ -13,7 +13,7 @@ function x_out = cuantizacion(x, N)
     elseif (xcuant(i) >= ((N-1)*H))
      x_out(i) = (N-1)*H;
     elseif (0 <= xcuant(i) && xcuant(i) < (N-1)*H)
-     x_out(i) = H*round(xcuant(i)/H);
+     x_out(i) = H*floor(xcuant(i)/H);
     endif
 
   endfor
