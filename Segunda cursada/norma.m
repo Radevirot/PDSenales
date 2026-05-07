@@ -1,5 +1,5 @@
 function xp = norma(x,p)
-  # La nota p de la señal x.
+  # La norma p de la señal x.
 
  if(strcmp(p, 'inf'))
   xp = max(abs(x));

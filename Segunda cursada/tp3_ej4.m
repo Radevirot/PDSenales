@@ -102,4 +102,4 @@ xlabel('Frecuencias de las senoidales a comparar (Hz)');
 ylabel('Valor de la similitud');
 title('Similitud entre conjunto base y onda cuadrada 5,5Hz')
 
-
+[xt, t] = senoidal(1, 0, 3, 100, 5.5, 0)
